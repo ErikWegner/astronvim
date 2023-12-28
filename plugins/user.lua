@@ -13,6 +13,7 @@ return {
     "kburdett/vim-nuuid",
     event = "User AstroFile",
   },
+  'folke/trouble.nvim',
   {
     'codota/tabnine-nvim',
     build = "./dl_binaries.sh",
