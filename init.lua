@@ -39,9 +39,33 @@ return {
           -- "python",
         },
       },
+      filter = function(client)
+        -- https://github.com/AstroNvim/astrocommunity/issues/608#issuecomment-1855318823
+        local has_prettier = function()
+          local util = require("lspconfig.util")
+          return util.root_pattern(".prettierrc")
+            or util.root_pattern(".prettierrc.json")
+            or util.root_pattern(".prettierrc.yml")
+            or util.root_pattern(".prettierrc.yaml")
+            or util.root_pattern(".prettierrc.json5")
+            or util.root_pattern(".prettierrc.js")
+            or util.root_pattern(".prettierrc.cjs")
+            or util.root_pattern("prettier.config.js")
+            or util.root_pattern(".prettierrc.mjs")
+            or util.root_pattern("prettier.config.mjs")
+            or util.root_pattern("prettier.config.cjs")
+            or util.root_pattern(".prettierrc.toml")
+        end
+        if vim.bo.filetype == "html" and has_prettier() then
+          return not(client.name == "null_ls" or client.name == "emmet_ls" or client.name == "html")
+        end
+      end,
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
+        -- "null_ls",
+        -- "emmet_ls",
+        -- "html",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
