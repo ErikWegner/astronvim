@@ -59,6 +59,7 @@ return {
         if vim.bo.filetype == "html" and has_prettier() then
           return not(client.name == "null_ls" or client.name == "emmet_ls" or client.name == "html")
         end
+        return true
       end,
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
