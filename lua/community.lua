@@ -9,4 +9,5 @@ return {
   -- import/override with your plugins folder
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.angular" },
+  { import = "astrocommunity.lsp.lsp-signature-nvim" },
 }
