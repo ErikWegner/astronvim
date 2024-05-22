@@ -10,5 +10,6 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.angular" },
+  { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
 }
