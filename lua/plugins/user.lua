@@ -1,24 +1,19 @@
+-- You can also add or configure plugins by creating files in this `plugins/` folder
+-- Here are some examples:
+---@type LazySpec
 return {
-  -- You can also add new plugins here as well:
-  -- Add plugins, the lazy syntax
-  -- "andweeb/presence.nvim",
   {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function()
-      require("lsp_signature").setup()
+    "kburdett/vim-nuuid",
+    init = function(_)
+      vim.g.nuuid_no_mappings = 1 -- disable default key mapping
+      vim.keymap.set("n", "<Leader>U", "<Plug>Nuuid", { desc = "Insert UUID" })
     end,
   },
   {
-    "kburdett/vim-nuuid",
-    event = "User AstroFile",
-  },
-  'folke/trouble.nvim',
-  {
-    'codota/tabnine-nvim',
+    "codota/tabnine-nvim",
     build = "./dl_binaries.sh",
     init = function()
-      require('tabnine').setup({
+      require("tabnine").setup {
         disable_auto_comment = true,
         accept_keymap = "<C-_>",
         dismiss_keymap = "<C-[>",
@@ -26,7 +21,7 @@ return {
         suggestion_color = { gui = "#808080", cterm = 244 },
         exclude_filetypes = { "TelescopePrompt" },
         log_file_path = nil, -- absolute path to Tabnine log file
-      })
+      }
     end,
   },
 }
