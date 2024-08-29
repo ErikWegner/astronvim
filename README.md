@@ -37,5 +37,5 @@ You can also just clone this repository directly if you do not want to track you
 #### Start Neovim
 
 ```shell
-NVIM_APPNAME=astronvim_v4 nvim ~/.config/astronvim_v4/
+nvim
 ```

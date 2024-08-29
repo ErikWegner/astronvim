@@ -1,3 +1,4 @@
+vim.o.guifont = "FiraCode Nerd Font:12"
 if true then return end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- This will run last in the setup process and is a good place to configure
