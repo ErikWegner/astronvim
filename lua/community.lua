@@ -11,5 +11,7 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.angular" },
   { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
 }
