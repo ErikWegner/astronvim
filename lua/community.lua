@@ -8,8 +8,8 @@ return {
   { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
   { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.angular" },
+  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
