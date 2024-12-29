@@ -1,4 +1,6 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
+local root_pattern = require("lspconfig.util").root_pattern
 
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
@@ -46,6 +48,9 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      angularls = {
+        root_dir = root_pattern("angular.json", "nx.json"),
+      },
       rust_analyzer = {
         settings = {
           ["rust-analyzer"] = {
