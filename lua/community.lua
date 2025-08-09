@@ -14,4 +14,5 @@ return {
   { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.file-explorer.oil-nvim" },
 }
