@@ -1,9 +1,18 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
+
+local angular_cmd = {
+  "ngserver",
+  "--stdio",
+  "--tsProbeLocations",
+  "node_modules",
+  "--ngProbeLocations",
+  "node_modules",
+}
 
 ---@type LazySpec
 return {
@@ -45,6 +54,12 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      angularls = {
+        cmd = angular_cmd,
+        filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
+        root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json", "nx.json"),
+        on_new_config = function(new_config, new_root_dir) new_config.cmd = angular_cmd end,
+      },
     },
     -- customize how language servers are attached
     handlers = {
