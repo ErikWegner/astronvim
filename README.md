@@ -23,7 +23,7 @@ You can also just clone this repository directly if you do not want to track you
 
 #### Clone the repository
 
-
+* with http:
     ```shell
     git clone https://github.com/ErikWegner/astronvim ~/.config/nvim
     ```
