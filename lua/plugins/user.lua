@@ -12,22 +12,6 @@ return {
     end,
   },
   {
-    "codota/tabnine-nvim",
-    build = "./dl_binaries.sh",
-    commit = "6d209e52239e09e19c4913595cb253d2c364afa8",
-    init = function()
-      require("tabnine").setup {
-        disable_auto_comment = true,
-        accept_keymap = "<C-_>",
-        dismiss_keymap = "<C-[>",
-        debounce_ms = 800,
-        suggestion_color = { gui = "#808080", cterm = 244 },
-        exclude_filetypes = { "TelescopePrompt" },
-        log_file_path = nil, -- absolute path to Tabnine log file
-      }
-    end,
-  },
-  {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
