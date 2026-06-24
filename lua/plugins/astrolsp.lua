@@ -3,14 +3,14 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
-local angular_cmd = {
-  "ngserver",
-  "--stdio",
-  "--tsProbeLocations",
-  "node_modules",
-  "--ngProbeLocations",
-  "node_modules",
-}
+-- local angular_cmd = {
+--   "ngserver",
+--   "--stdio",
+--   "--tsProbeLocations",
+--   "node_modules",
+--   "--ngProbeLocations",
+--   "node_modules",
+-- }
 
 ---@type LazySpec
 return {
@@ -50,15 +50,15 @@ return {
     -- },
     -- customize language server configuration passed to `vim.lsp.config`
     -- client specific configuration can also go in `lsp/` in your configuration root (see `:h lsp-config`)
-    config = {
-      angularls = {
-        cmd = angular_cmd,
-        filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
-        root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json", "nx.json"),
-        on_new_config = function(new_config, new_root_dir) new_config.cmd = angular_cmd end,
-      },
-      -- ["*"] = { capabilities = {} }, -- modify default LSP client settings such as capabilities
-    },
+    -- config = {
+    --   angularls = {
+    --     cmd = angular_cmd,
+    --     filetypes = { "typescript", "html", "typescriptreact" },
+    --     root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json", "nx.json"),
+    --     on_new_config = function(new_config, new_root_dir) new_config.cmd = angular_cmd end,
+    --   },
+    --   -- ["*"] = { capabilities = {} }, -- modify default LSP client settings such as capabilities
+    -- },
     -- customize how language servers are attached
     handlers = {
       -- a function with the key `*` modifies the default handler, functions takes the server name as the parameter
